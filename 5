@@ -30,8 +30,8 @@ AND 0.3 * (午前 + 午後1 + 午後2) <= 論述
 UPDATE
     回答者
 SET
-    国名 CASE SUBSTRING(TRIM(メールアドレス)),
-        LENGTH(TRIM(メールアドレス) - 1, 2)
+    国名 CASE SUBSTRING(TRIM(メールアドレス),
+        LENGTH(TRIM(メールアドレス) - 1, 2))
         WHEN 'jp' THEN '日本'
         WHEN 'uk' THEN 'イギリス'
         WHEN 'cn' THEN '中国'
